@@ -10,3 +10,10 @@ cp ~/.yabairc ~/.dotfiles/
 
 cp ~/bin/wal.sh ~/.dotfiles/scripts/
 cp ~/bin/waltospice.jar ~/.dotfiles/scripts/
+
+git add *
+
+timestamp=$(date +"%D %T")
+git commit -m "updated dots on $timestamp"
+
+git push
