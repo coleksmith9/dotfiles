@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" VUNDLE SETTINGS
+"
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -10,46 +12,21 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" dracula color scheme
-" Plugin 'dracula/vim'
+" COLOR SCHEMES
 
-Plugin 'arcticicestudio/nord-vim'
+" Plugin 'dracula/vim'
+" Plugin 'arcticicestudio/nord-vim'
 Plugin 'dylanaraps/wal.vim'
 
-" latex helper
-Plugin 'lervag/vimtex'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+" PYTHON HELPER PLUGINS
+Plugin 'vim-scripts/indentpython.vim'
+Bundle 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+" VIM CONFIG SETTINGS
 
 " adds syntax highlighting
 syntax on
@@ -57,9 +34,45 @@ syntax on
 " adds line numbers
 set number
 
+" set tabs to have 4 spaces
+set ts=4
+
+" when using the >> or << commands, shifts line by 4 spaces
+set shiftwidth=4
+
+" expand tabs into spaces
+set expandtab
+
+" auto indents when moving to next line
+set autoindent
+
 " adds line highlight to current line
 set cursorline
-hi CursorLine cterm=bold ctermbg=236
+" hi CursorLine cterm=bold ctermbg=236
 
-" sets colorscheme to nord
+" show the matching pair for () {} []
+set showmatch
+
+" enables all python features
+let python_highlight_all = 1
+
+" sets colorscheme to wal
 colorscheme wal
+
+" visual autocomplete for command menu
+set wildmenu
+
+" search as characters are entered and highlight matches
+set incsearch
+set hlsearch
+
+" folds _very_ nested blocks of code on load
+set foldmethod=indent
+set foldlevel=10
+
+" folds and unfolds on spacebar
+nnoremap <space> za
+
+" YouCompleteMe configs
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>

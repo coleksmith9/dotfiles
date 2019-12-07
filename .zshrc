@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+alias sp="screen -S startpage -dm ~/bin/git/startpage/StartServer.sh"
 # functions to compile c++ code
 function comp() {
 	g++ -std=c++11 -o $1 *.cpp
