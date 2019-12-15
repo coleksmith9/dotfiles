@@ -11,6 +11,10 @@ cp ~/.yabairc ~/.dotfiles/
 cp ~/bin/wal.sh ~/.dotfiles/scripts/
 cp ~/bin/waltospice.jar ~/.dotfiles/scripts/
 
+# firefox userChrome.css
+cp /Users/cole/Library/Application\ Support/Firefox/Profiles/ugek2qoc.default-release/chrome/userChrome.css ~/.dotfiles/
+cp /Users/cole/Library/Application\ Support/Firefox/Profiles/ugek2qoc.default-release/chrome/colors.css ~/.dotfiles/
+
 git add .
 
 timestamp=$(date +"%D %T")

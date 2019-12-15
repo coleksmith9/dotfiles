@@ -1,0 +1,38 @@
+@import url('colors.css');
+
+/* Use the variables */
+menubar, toolbar, nav-bar, #TabsToolbar > *{
+  background-color: var(--background) !important;
+}
+
+.tabbrowser-tab-background[selected="true"] {
+background-color: var(--background) !important; /* this sets the color of the tab background */
+}
+
+.tab-line[selected="true"] {
+background-color : var(--color6) !important; /* this sets the color of the line above the tab */
+}
+
+/* Replace favicon on tabs with close button on hover */
+
+.tabbrowser-tab:not(:hover) .tab-close-button{ display:none; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{ display:block !important; }
+
+
+.tabbrowser-tab:not([pinned]):hover  .tab-icon-image {
+  display: none !important;
+}
+
+.tabbrowser-tab:hover  .tab-throbber,
+.tabbrowser-tab:hover  .tab-icon-image,
+.tabbrowser-tab:hover .tab-sharing-icon-overlay,
+.tabbrowser-tab:hover  .tab-icon-overlay,
+.tabbrowser-tab:hover  .tab-label-container,
+.tabbrowser-tab:hover  .tab-icon-sound {
+  -moz-box-ordinal-group: 2 !important;
+}
+
+.tabbrowser-tab .tab-close-button {
+  margin-left: -2px !important;
+  margin-right: 4px !important;
+}
