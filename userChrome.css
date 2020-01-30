@@ -10,7 +10,7 @@ background-color: var(--background) !important; /* this sets the color of the ta
 }
 
 .tab-line[selected="true"] {
-background-color : var(--color6) !important; /* this sets the color of the line above the tab */
+background-color : var(--color3) !important; /* this sets the color of the line above the tab */
 }
 
 /* Replace favicon on tabs with close button on hover */

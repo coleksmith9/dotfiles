@@ -2,12 +2,15 @@
 
 # This script copies my dotfiles to this directory, adds them to github, commits it, and pushes to master
 
+# iterm2 stuff
 cp ~/.vimrc ~/.dotfiles/
 cp ~/.zshrc ~/.dotfiles/
 
+# yabai stuff
 cp ~/.skhdrc ~/.dotfiles/
 cp ~/.yabairc ~/.dotfiles/
 
+# wal stuff
 cp ~/bin/wal.sh ~/.dotfiles/scripts/
 cp ~/bin/waltospice.jar ~/.dotfiles/scripts/
 

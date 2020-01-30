@@ -16,20 +16,13 @@ wal -i $1 -n
 # install using 'brew install wallpaper'
 
 printf "\nSetting wallpaper\n"
-if [ -z "$2" ]
+if [ -z "$10" ]
   then
     for n in {1..10}
     do
       yabai -m window --space $n
       yabai -m space  --focus $n
       wallpaper set $1
-    done
-  else
-    for n in {1..10}
-    do
-      yabai -m window --space $n
-      yabai -m space  --focus $n
-      wallpaper set $2
     done
 fi
 
